@@ -230,7 +230,7 @@ body {
 
 /* ---- Domain filter ---- */
 .domain-filter {
-  margin-bottom: 36px;
+  margin-bottom: 16px;
 }
 
 .domain-filter-label {
@@ -277,6 +277,68 @@ body {
   border-color: var(--accent);
   color: #fff;
   font-weight: 600;
+}
+
+/* ---- Level filter ---- */
+.level-filter {
+  margin-bottom: 36px;
+}
+
+.level-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.level-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  font-size: 0.825rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.level-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-light);
+}
+
+.level-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ---- Brief level badge ---- */
+.brief-badges {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.brief-level-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 11px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid;
+  white-space: nowrap;
 }
 
 /* ---- Brief placeholder ---- */
@@ -364,8 +426,6 @@ body {
   font-weight: 600;
   border: 1px solid;
   white-space: nowrap;
-  align-self: flex-start;
-  flex-shrink: 0;
 }
 
 .brief-actions {
