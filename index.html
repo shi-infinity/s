@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ConsultBrief — Consulting Project Brief Generator</title>
+  <meta name="description" content="Generate unique consulting project briefs across Marketing, HR, Operations, Strategy, Finance, Banking and more. Build your consulting CV by practising real-world projects." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="ConsultBrief — Consulting Project Brief Generator" />
+  <meta property="og:description" content="Generate unique consulting project briefs across Marketing, HR, Operations, Strategy, Finance, Banking and more." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto+Mono:wght@600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="site-wrapper">
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <a class="logo" href="/" aria-label="ConsultBrief home">
+      <div class="logo-mark" aria-hidden="true">📋</div>
+      <span class="logo-text">Consult<span>Brief</span></span>
+    </a>
+
+    <div class="header-actions">
+      <button class="saved-btn" id="savedPanelBtn" aria-label="View saved briefs">
+        🔖 Saved
+        <span class="saved-badge" id="savedCount" aria-live="polite">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" aria-labelledby="heroHeading">
+    <h1 id="heroHeading">
+      Get your next<br/>
+      <em>consulting brief</em>
+    </h1>
+    <p>
+      Practice real-world consulting work across 9 domains. Each brief gives you
+      a client, a challenge, a scope, and deliverables — just like on the job.
+    </p>
+
+    <button class="generate-btn" id="generateBtn" aria-label="Generate a new consulting brief">
+      <span class="btn-icon" aria-hidden="true">✦</span>
+      Generate brief
+    </button>
+    <p class="generate-hint" aria-hidden="true">Press <kbd>Space</kbd> for a new brief</p>
+  </section>
+
+  <!-- ===== Domain filter ===== -->
+  <nav class="domain-filter" aria-label="Filter by consulting domain">
+    <div class="domain-filter-label">Filter by domain</div>
+    <div class="domain-pills" role="group" aria-label="Domain selection">
+      <button class="domain-btn active" data-domain="any" aria-pressed="true">🎲 Any domain</button>
+      <button class="domain-btn" data-domain="marketing" aria-pressed="false">📣 Marketing</button>
+      <button class="domain-btn" data-domain="hr" aria-pressed="false">👥 Human Resources</button>
+      <button class="domain-btn" data-domain="operations" aria-pressed="false">⚙️ Operations</button>
+      <button class="domain-btn" data-domain="strategy" aria-pressed="false">♟️ Strategy</button>
+      <button class="domain-btn" data-domain="management" aria-pressed="false">🏛️ Management</button>
+      <button class="domain-btn" data-domain="finance" aria-pressed="false">💰 Finance</button>
+      <button class="domain-btn" data-domain="banking" aria-pressed="false">🏦 Banking & FS</button>
+      <button class="domain-btn" data-domain="technology" aria-pressed="false">💻 Technology</button>
+      <button class="domain-btn" data-domain="sustainability" aria-pressed="false">🌱 ESG</button>
+    </div>
+  </nav>
+
+  <!-- ===== Brief placeholder ===== -->
+  <div class="brief-placeholder" id="briefPlaceholder" aria-live="polite">
+    <div class="ph-icon" aria-hidden="true">📋</div>
+    <p>Your consulting brief will appear here.<br/>Hit <strong>Generate brief</strong> to get started.</p>
+  </div>
+
+  <!-- ===== Brief card ===== -->
+  <article id="briefSection" aria-live="polite" aria-label="Generated consulting brief">
+    <div class="brief-card">
+
+      <!-- Brief header -->
+      <div class="brief-header">
+        <div class="brief-meta">
+          <span class="brief-id" id="briefId" aria-label="Brief reference ID">—</span>
+          <h2 class="brief-project-title" id="briefProject">—</h2>
+        </div>
+        <span class="brief-domain-badge" id="briefDomainBadge">—</span>
+      </div>
+
+      <!-- Action buttons -->
+      <div class="brief-actions">
+        <button class="action-btn" id="copyBtn" title="Copy brief to clipboard">
+          📋 Copy brief
+        </button>
+        <button class="action-btn save-btn" id="saveBtn" title="Save brief">
+          🔖 Save
+        </button>
+      </div>
+
+      <!-- Brief body -->
+      <div class="brief-body">
+
+        <!-- Client -->
+        <section class="brief-section" aria-labelledby="clientLabel">
+          <div class="section-label" id="clientLabel">The Client</div>
+          <div class="client-grid">
+            <div class="client-item">
+              <div class="client-item-label">Organisation type</div>
+              <div class="client-item-value" id="clientType">—</div>
+            </div>
+            <div class="client-item">
+              <div class="client-item-label">Industry</div>
+              <div class="client-item-value" id="clientIndustry">—</div>
+            </div>
+            <div class="client-item">
+              <div class="client-item-label">Size</div>
+              <div class="client-item-value" id="clientSize">—</div>
+            </div>
+            <div class="client-item">
+              <div class="client-item-label">Revenue / Scale</div>
+              <div class="client-item-value" id="clientRevenue">—</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Challenge -->
+        <section class="brief-section" aria-labelledby="challengeLabel">
+          <div class="section-label" id="challengeLabel">The Challenge</div>
+          <blockquote class="challenge-text" id="briefChallenge">—</blockquote>
+        </section>
+
+        <!-- Deliverables -->
+        <section class="brief-section" aria-labelledby="deliverablesLabel">
+          <div class="section-label" id="deliverablesLabel">Your Deliverables</div>
+          <ul class="deliverables-list" id="deliverablesList" aria-label="List of expected deliverables">
+          </ul>
+        </section>
+
+        <!-- Constraints -->
+        <section class="brief-section" aria-labelledby="constraintsLabel">
+          <div class="section-label" id="constraintsLabel">Constraints</div>
+          <div class="constraints-row">
+            <div class="constraint-chip">
+              <span class="chip-icon" aria-hidden="true">💷</span>
+              <div>
+                <div class="chip-label">Budget</div>
+                <div class="chip-value" id="briefBudget">—</div>
+              </div>
+            </div>
+            <div class="constraint-chip">
+              <span class="chip-icon" aria-hidden="true">⏱</span>
+              <div>
+                <div class="chip-label">Timeline</div>
+                <div class="chip-value" id="briefTimeline">—</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Audience -->
+        <section class="brief-section" aria-labelledby="audienceLabel">
+          <div class="section-label" id="audienceLabel">Present to</div>
+          <p class="audience-text" id="briefAudience">—</p>
+        </section>
+
+      </div><!-- /brief-body -->
+    </div><!-- /brief-card -->
+  </article>
+
+  <!-- ===== Stats bar ===== -->
+  <div class="stats-bar" aria-label="Site statistics">
+    <div class="stat-item">
+      <div class="stat-value">9</div>
+      <div class="stat-label">Consulting domains</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">1,000+</div>
+      <div class="stat-label">Unique brief combinations</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">Free</div>
+      <div class="stat-label">Always</div>
+    </div>
+  </div>
+
+</div><!-- /site-wrapper -->
+
+<!-- ===== Saved panel ===== -->
+<aside class="saved-panel" id="savedPanel" aria-label="Saved briefs" aria-modal="true">
+  <div class="saved-panel-header">
+    <h2>Saved briefs</h2>
+    <button class="close-panel-btn" id="closeSavedPanel" aria-label="Close saved briefs panel">✕</button>
+  </div>
+  <div class="saved-list" id="savedList"></div>
+</aside>
+<div class="saved-panel-overlay" id="savedPanelOverlay" aria-hidden="true"></div>
+
+<!-- ===== Footer ===== -->
+<footer class="site-footer">
+  <p>ConsultBrief &mdash; practice consulting, build your CV.</p>
+  <p style="margin-top:6px">Inspired by <a href="https://goodbrief.io" target="_blank" rel="noopener noreferrer">goodbrief.io</a></p>
+</footer>
+
+<!-- ===== Toast ===== -->
+<div id="toast" role="status" aria-live="polite"></div>
+
+<!-- ===== Scripts ===== -->
+<script src="data.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
