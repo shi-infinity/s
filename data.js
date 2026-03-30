@@ -44,11 +44,11 @@ const DOMAINS = {
       ["SEO audit and keyword strategy", "Content calendar (90 days)", "Editorial guidelines", "Backlink acquisition strategy"],
     ],
     constraints: [
-      { budget: "£15,000–£25,000", timeline: "8 weeks" },
-      { budget: "£8,000–£12,000", timeline: "6 weeks" },
-      { budget: "£30,000–£50,000", timeline: "12 weeks" },
-      { budget: "£20,000", timeline: "10 weeks" },
-      { budget: "£5,000", timeline: "4 weeks" },
+      { budget: "£15,000–£25,000", timeline: "8 weeks", level: "mid" },
+      { budget: "£8,000–£12,000", timeline: "6 weeks", level: "junior" },
+      { budget: "£30,000–£50,000", timeline: "12 weeks", level: "senior" },
+      { budget: "£20,000", timeline: "10 weeks", level: "mid" },
+      { budget: "£5,000", timeline: "4 weeks", level: "junior" },
     ],
     audience: ["The CMO and Head of Growth", "The CEO and Founder", "The Marketing Director and Board", "The Digital Marketing team"],
   },
@@ -94,11 +94,11 @@ const DOMAINS = {
       ["HR technology audit", "Requirements specification for HRIS upgrade", "Vendor shortlist with evaluation criteria", "Change management plan"],
     ],
     constraints: [
-      { budget: "£20,000–£35,000", timeline: "10 weeks" },
-      { budget: "£12,000–£18,000", timeline: "8 weeks" },
-      { budget: "£40,000–£60,000", timeline: "14 weeks" },
-      { budget: "£8,000", timeline: "6 weeks" },
-      { budget: "£25,000", timeline: "12 weeks" },
+      { budget: "£20,000–£35,000", timeline: "10 weeks", level: "mid" },
+      { budget: "£12,000–£18,000", timeline: "8 weeks", level: "junior" },
+      { budget: "£40,000–£60,000", timeline: "14 weeks", level: "senior" },
+      { budget: "£8,000", timeline: "6 weeks", level: "junior" },
+      { budget: "£25,000", timeline: "12 weeks", level: "mid" },
     ],
     audience: ["The CHRO and People Leadership Team", "The CEO and Executive Committee", "The HR Director and Line Managers", "The Board People Committee"],
   },
@@ -144,11 +144,11 @@ const DOMAINS = {
       ["Demand forecasting model", "Capacity planning tool (Excel/spreadsheet)", "Staffing model", "Recommendations for scheduling software"],
     ],
     constraints: [
-      { budget: "£25,000–£40,000", timeline: "10 weeks" },
-      { budget: "£15,000–£22,000", timeline: "8 weeks" },
-      { budget: "£50,000–£80,000", timeline: "16 weeks" },
-      { budget: "£10,000", timeline: "6 weeks" },
-      { budget: "£35,000", timeline: "12 weeks" },
+      { budget: "£25,000–£40,000", timeline: "10 weeks", level: "mid" },
+      { budget: "£15,000–£22,000", timeline: "8 weeks", level: "junior" },
+      { budget: "£50,000–£80,000", timeline: "16 weeks", level: "senior" },
+      { budget: "£10,000", timeline: "6 weeks", level: "junior" },
+      { budget: "£35,000", timeline: "12 weeks", level: "mid" },
     ],
     audience: ["The COO and Operations Leadership Team", "The CEO and Board", "Plant and Site Managers", "The Supply Chain Director"],
   },
@@ -194,11 +194,11 @@ const DOMAINS = {
       ["Market sizing for 3 adjacencies", "Attractiveness and fit assessment", "Entry mode options (build, buy, partner)", "Recommended strategy with go/no-go criteria"],
     ],
     constraints: [
-      { budget: "£40,000–£70,000", timeline: "12 weeks" },
-      { budget: "£25,000–£45,000", timeline: "10 weeks" },
-      { budget: "£80,000–£120,000", timeline: "16 weeks" },
-      { budget: "£15,000", timeline: "8 weeks" },
-      { budget: "£55,000", timeline: "14 weeks" },
+      { budget: "£40,000–£70,000", timeline: "12 weeks", level: "mid" },
+      { budget: "£25,000–£45,000", timeline: "10 weeks", level: "junior" },
+      { budget: "£80,000–£120,000", timeline: "16 weeks", level: "senior" },
+      { budget: "£15,000", timeline: "8 weeks", level: "junior" },
+      { budget: "£55,000", timeline: "14 weeks", level: "mid" },
     ],
     audience: ["The CEO and Executive Leadership Team", "The Board of Directors", "The Strategy Director and C-Suite", "Investors and the Management Team"],
   },
@@ -243,11 +243,11 @@ const DOMAINS = {
       ["Stakeholder mapping and engagement plan", "100-day priority agenda", "Key decisions to make in first 90 days", "Communication strategy"],
     ],
     constraints: [
-      { budget: "£20,000–£35,000", timeline: "10 weeks" },
-      { budget: "£12,000–£20,000", timeline: "8 weeks" },
-      { budget: "£45,000–£65,000", timeline: "14 weeks" },
-      { budget: "£8,000", timeline: "6 weeks" },
-      { budget: "£30,000", timeline: "12 weeks" },
+      { budget: "£20,000–£35,000", timeline: "10 weeks", level: "mid" },
+      { budget: "£12,000–£20,000", timeline: "8 weeks", level: "junior" },
+      { budget: "£45,000–£65,000", timeline: "14 weeks", level: "senior" },
+      { budget: "£8,000", timeline: "6 weeks", level: "junior" },
+      { budget: "£30,000", timeline: "12 weeks", level: "mid" },
     ],
     audience: ["The CEO and Executive Team", "The Chairman and Board", "The HR Director and Senior Leadership", "All people managers"],
   },
@@ -293,11 +293,11 @@ const DOMAINS = {
       ["P&L waterfall analysis", "Product/segment profitability model", "Cost driver analysis", "Recommendations with financial impact quantification"],
     ],
     constraints: [
-      { budget: "£20,000–£35,000", timeline: "8 weeks" },
-      { budget: "£10,000–£18,000", timeline: "6 weeks" },
-      { budget: "£40,000–£65,000", timeline: "12 weeks" },
-      { budget: "£8,000", timeline: "5 weeks" },
-      { budget: "£50,000", timeline: "14 weeks" },
+      { budget: "£20,000–£35,000", timeline: "8 weeks", level: "mid" },
+      { budget: "£10,000–£18,000", timeline: "6 weeks", level: "junior" },
+      { budget: "£40,000–£65,000", timeline: "12 weeks", level: "senior" },
+      { budget: "£8,000", timeline: "5 weeks", level: "junior" },
+      { budget: "£50,000", timeline: "14 weeks", level: "mid" },
     ],
     audience: ["The CFO and Finance Leadership Team", "The CEO and Board", "The FD and Management Team", "Private Equity Owners and Investors"],
   },
@@ -343,11 +343,11 @@ const DOMAINS = {
       ["Customer needs research synthesis", "Product portfolio assessment", "Pricing strategy review", "New product concepts with business cases"],
     ],
     constraints: [
-      { budget: "£45,000–£75,000", timeline: "12 weeks" },
-      { budget: "£25,000–£40,000", timeline: "10 weeks" },
-      { budget: "£80,000–£130,000", timeline: "16 weeks" },
-      { budget: "£15,000", timeline: "8 weeks" },
-      { budget: "£60,000", timeline: "14 weeks" },
+      { budget: "£45,000–£75,000", timeline: "12 weeks", level: "mid" },
+      { budget: "£25,000–£40,000", timeline: "10 weeks", level: "junior" },
+      { budget: "£80,000–£130,000", timeline: "16 weeks", level: "senior" },
+      { budget: "£15,000", timeline: "8 weeks", level: "junior" },
+      { budget: "£60,000", timeline: "14 weeks", level: "mid" },
     ],
     audience: ["The CEO and Executive Committee", "The Board Risk Committee", "The COO and Transformation team", "The CRO and Compliance Leadership"],
   },
@@ -392,11 +392,11 @@ const DOMAINS = {
       ["AI use case identification and prioritisation", "AI governance framework", "Build vs buy vs partner analysis", "Pilot programme design"],
     ],
     constraints: [
-      { budget: "£35,000–£60,000", timeline: "12 weeks" },
-      { budget: "£20,000–£35,000", timeline: "10 weeks" },
-      { budget: "£70,000–£110,000", timeline: "16 weeks" },
-      { budget: "£12,000", timeline: "8 weeks" },
-      { budget: "£45,000", timeline: "14 weeks" },
+      { budget: "£35,000–£60,000", timeline: "12 weeks", level: "mid" },
+      { budget: "£20,000–£35,000", timeline: "10 weeks", level: "junior" },
+      { budget: "£70,000–£110,000", timeline: "16 weeks", level: "senior" },
+      { budget: "£12,000", timeline: "8 weeks", level: "junior" },
+      { budget: "£45,000", timeline: "14 weeks", level: "mid" },
     ],
     audience: ["The CTO/CIO and Technology Leadership", "The CEO and Board", "The Digital Transformation Director", "IT and Business stakeholders"],
   },
@@ -441,11 +441,11 @@ const DOMAINS = {
       ["ESG governance gap analysis", "Board and committee structure recommendations", "ESG training programme for directors", "ESG metrics for executive remuneration"],
     ],
     constraints: [
-      { budget: "£30,000–£50,000", timeline: "12 weeks" },
-      { budget: "£15,000–£25,000", timeline: "8 weeks" },
-      { budget: "£60,000–£90,000", timeline: "16 weeks" },
-      { budget: "£10,000", timeline: "6 weeks" },
-      { budget: "£40,000", timeline: "14 weeks" },
+      { budget: "£30,000–£50,000", timeline: "12 weeks", level: "mid" },
+      { budget: "£15,000–£25,000", timeline: "8 weeks", level: "junior" },
+      { budget: "£60,000–£90,000", timeline: "16 weeks", level: "senior" },
+      { budget: "£10,000", timeline: "6 weeks", level: "junior" },
+      { budget: "£40,000", timeline: "14 weeks", level: "mid" },
     ],
     audience: ["The CEO and Sustainability Director", "The Board and Audit/Risk Committee", "The CFO and Investor Relations team", "The Chief Sustainability Officer"],
   },
@@ -462,7 +462,8 @@ function randInt(min, max) {
 }
 
 // Generate a unique brief for a given domain key (or random if null)
-function generateBrief(domainKey) {
+// level: "junior" | "mid" | "senior" | null (any)
+function generateBrief(domainKey, level) {
   const key = domainKey || pick(Object.keys(DOMAINS));
   const domain = DOMAINS[key];
 
@@ -470,7 +471,12 @@ function generateBrief(domainKey) {
   const challenge = pick(domain.challenges);
   const project = pick(domain.projects);
   const deliverables = pick(domain.deliverables);
-  const constraint = pick(domain.constraints);
+
+  const filteredConstraints = level
+    ? domain.constraints.filter(function (c) { return c.level === level; })
+    : domain.constraints;
+  const constraint = pick(filteredConstraints.length ? filteredConstraints : domain.constraints);
+
   const audience = pick(domain.audience);
 
   // Generate a pseudo-random project ID
@@ -482,6 +488,7 @@ function generateBrief(domainKey) {
     domainLabel: domain.label,
     domainIcon: domain.icon,
     domainColor: domain.color,
+    level: constraint.level,
     client,
     challenge,
     project,

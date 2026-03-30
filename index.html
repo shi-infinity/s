@@ -72,6 +72,17 @@
     </div>
   </nav>
 
+  <!-- ===== Difficulty level filter ===== -->
+  <nav class="level-filter" aria-label="Filter by difficulty level">
+    <div class="domain-filter-label">Difficulty level</div>
+    <div class="level-pills" role="group" aria-label="Difficulty level selection">
+      <button class="level-btn active" data-level="any" aria-pressed="true">🎲 Any level</button>
+      <button class="level-btn" data-level="junior" aria-pressed="false">🎓 Junior (Analyst)</button>
+      <button class="level-btn" data-level="mid" aria-pressed="false">💼 Mid (Consultant)</button>
+      <button class="level-btn" data-level="senior" aria-pressed="false">🏆 Senior (Manager/Partner)</button>
+    </div>
+  </nav>
+
   <!-- ===== Brief placeholder ===== -->
   <div class="brief-placeholder" id="briefPlaceholder" aria-live="polite">
     <div class="ph-icon" aria-hidden="true">📋</div>
@@ -88,7 +99,10 @@
           <span class="brief-id" id="briefId" aria-label="Brief reference ID">—</span>
           <h2 class="brief-project-title" id="briefProject">—</h2>
         </div>
-        <span class="brief-domain-badge" id="briefDomainBadge">—</span>
+        <div class="brief-badges">
+          <span class="brief-domain-badge" id="briefDomainBadge">—</span>
+          <span class="brief-level-badge" id="briefLevelBadge" aria-label="Difficulty level">—</span>
+        </div>
       </div>
 
       <!-- Action buttons -->

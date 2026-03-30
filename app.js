@@ -8,6 +8,7 @@
   /* ---- State ---- */
   let currentBrief = null;
   let selectedDomain = null; // null = Any domain
+  let selectedLevel = null;  // null = Any level
 
   /* ---- DOM References ---- */
   const generateBtn = document.getElementById("generateBtn");
@@ -31,6 +32,7 @@
   const copyBtn = document.getElementById("copyBtn");
   const saveBtn = document.getElementById("saveBtn");
   const savedCount = document.getElementById("savedCount");
+  const briefLevelBadge = document.getElementById("briefLevelBadge");
 
   /* ---- Saved Briefs ---- */
   let saved = JSON.parse(localStorage.getItem("cb_saved") || "[]");
@@ -53,6 +55,20 @@
     });
   });
 
+  /* ---- Level selection ---- */
+  var levelBtns = document.querySelectorAll(".level-btn");
+  levelBtns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      levelBtns.forEach(function (b) {
+        b.classList.remove("active");
+        b.setAttribute("aria-pressed", "false");
+      });
+      btn.classList.add("active");
+      btn.setAttribute("aria-pressed", "true");
+      selectedLevel = btn.dataset.level === "any" ? null : btn.dataset.level;
+    });
+  });
+
   /* ---- Generate ---- */
   generateBtn.addEventListener("click", function () {
     triggerGenerate();
@@ -72,7 +88,7 @@
     generateBtn.disabled = true;
 
     setTimeout(function () {
-      currentBrief = generateBrief(selectedDomain);
+      currentBrief = generateBrief(selectedDomain, selectedLevel);
       renderBrief(currentBrief);
       generateBtn.classList.remove("spinning");
       generateBtn.disabled = false;
@@ -91,6 +107,23 @@
     briefDomainBadge.style.color = brief.domainColor;
     briefDomainBadge.style.borderColor = brief.domainColor + "55";
     briefProject.textContent = brief.project;
+
+    // Level badge
+    var levelConfig = {
+      junior: { icon: "🎓", label: "Junior (Analyst)", color: "#2ecc71" },
+      mid:    { icon: "💼", label: "Mid (Consultant)",  color: "#e67e22" },
+      senior: { icon: "🏆", label: "Senior (Manager/Partner)", color: "#e74c3c" },
+    };
+    var lvl = levelConfig[brief.level];
+    if (lvl) {
+      briefLevelBadge.textContent = lvl.icon + " " + lvl.label;
+      briefLevelBadge.style.background = lvl.color + "22";
+      briefLevelBadge.style.color = lvl.color;
+      briefLevelBadge.style.borderColor = lvl.color + "55";
+      briefLevelBadge.style.display = "";
+    } else {
+      briefLevelBadge.style.display = "none";
+    }
 
     // Client
     clientType.textContent = brief.client.type;
@@ -224,10 +257,12 @@
   }
 
   /* ---- Plain text export ---- */
+  var LEVEL_LABELS = { junior: "Junior (Analyst)", mid: "Mid (Consultant)", senior: "Senior (Manager/Partner)" };
   function buildPlainText(brief) {
     var lines = [
       "CONSULTING PROJECT BRIEF — " + brief.id,
       "Domain: " + brief.domainIcon + " " + brief.domainLabel,
+      "Level: " + (LEVEL_LABELS[brief.level] || "Any"),
       "Project: " + brief.project,
       "",
       "CLIENT",
